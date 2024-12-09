@@ -5,20 +5,20 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-INPUT_DIR="$HOME/repos/bare/$1.git"
-OUTPUT_DIR="$HOME/repos/mirror/$1/"
+BARE_DIR="$HOME/repos/bare/$1.git"
+MIRROR_DIR="$HOME/repos/mirror/$1/"
 
-if [ ! -d "$INPUT_DIR" ]; then
-    echo "Error: Bare repository $INPUT_DIR does not exist."
+if [ ! -d "$BARE_DIR" ]; then
+    echo "Error: Bare repository $BARE_DIR does not exist."
     exit 1
 fi
 
-if [ -d "$OUTPUT_DIR" ]; then
-    echo "Updating existing mirror repository at $OUTPUT_DIR"
-    cd "$OUTPUT_DIR" && git pull origin main
+if [ -d "$MIRROR_DIR" ]; then
+    echo "Updating existing mirror repository at $MIRROR_DIR"
+    cd "$MIRROR_DIR" && git pull origin main
 else
-    echo "Cloning bare repository to $OUTPUT_DIR"
-    git clone "$INPUT_DIR" "$OUTPUT_DIR"
+    echo "Cloning bare repository to $MIRROR_DIR"
+    git clone "$BARE_DIR" "$MIRROR_DIR"
 fi
 
-echo "Mirror repository synchronized to $OUTPUT_DIR"
+echo "Mirror repository synchronized to $MIRROR_DIR"

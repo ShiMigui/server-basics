@@ -6,12 +6,12 @@ if [ -z "$1" ]; then
 fi
 
 URL="git@github.com:shimigui"
-TARGET_DIR="$HOME/repos/bare/$1.git"
+TARGET="$HOME/repos/bare/$1.git"
 
-mkdir -p "$TARGET_DIR"
+mkdir -p "$TARGET"
 
-git clone --bare "$URL/$1" "$TARGET_DIR"
+git clone --bare "$URL/$1" "$TARGET"
 
 if [ $? -eq 0 ]; then
-    echo "Bare repository cloned to $TARGET_DIR"
+    echo "Bare repository cloned to $TARGET"
 fi

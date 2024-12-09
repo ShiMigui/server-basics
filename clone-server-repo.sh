@@ -7,5 +7,6 @@ fi
 
 REPO_NAME=$1
 SERVER="ssh://192.168.1.100"
+TARGET="~/repos/bare/$REPO_NAME.git"
 
-git clone "$SERVER:~/repos/bare/$REPO_NAME.git"
+git clone "$SERVER:$TARGET"
