@@ -5,10 +5,13 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-TARGET_DIR=~/repos/bare
+URL="git@github.com:shimigui"
+TARGET_DIR="$HOME/repos/bare/$1.git"
 
 mkdir -p "$TARGET_DIR"
 
-git clone --bare git@github.com:shimigui/"$1" "$TARGET_DIR/$1.git"
+git clone --bare "$URL/$1" "$TARGET_DIR"
 
-echo "Bare repository cloned to $TARGET_DIR/$1.git"
+if [ $? -eq 0 ]; then
+    echo "Bare repository cloned to $TARGET_DIR"
+fi
