@@ -8,14 +8,15 @@ A tool for executing commands over SSH to manage repositories, including creatin
 - **Server-side**: Refers to the service accessed through the SSH connection.
 
 ## Usage
-This tool is divided into two components: `<tool>` and `<tool> <feature>`.
+This tool is divided into two layers: `<tool>` and `<tool> <feature>`.
 
 ### Tools
 Commands to manage operations on the server-side.  
-| TOOL     | DESCRIPTION                                                |
-| -------- | ---------------------------------------------------------- |
-| `bare`   | Manages bare repositories located in `$BARE_DIR`.          |
-| `mirror` | Manages repositories with a working tree in `$MIRROR_DIR`. |
+| TOOL     | DESCRIPTION                                                | WORK DIR      |
+| -------- | ---------------------------------------------------------- | ------------- |
+| `bare`   | Manages bare repositories located in `$BARE_DIR`.          | `$BARE_DIR`   |
+| `mirror` | Manages repositories with a working tree in `$MIRROR_DIR`. | `$MIRROR_DIR` |
+| `-r`     | Reflects commands to the server-side.                      | -             |
 
 ### Tool Features
 Features extend the functionality of a tool.  

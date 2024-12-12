@@ -5,10 +5,12 @@ source "./source/config.sh"
 source "./func/execute_command.sh"
 source "./func/usage.sh"
 
-HOST=$1
+HOST=${1:-"<host>"}
 TOOL=${2:-"<tool>"}
-# Verify if has at least 2 variables
-usage 2 "server.sh: $0 $TOOL <feature>" $@
+FEATURE=${3:-"<feature>"}
+
+usage 3 "server.sh: $0 $HOST $TOOL $FEATURE [..args]" $@
+shift 3
 
 case $TOOL in
 "bare")
@@ -17,9 +19,13 @@ case $TOOL in
 "mirror")
     source "./tools/mirror.sh"
     ;;
-*)
-    echo "Warning: Untracked tool '$TOOL'"
-    shift 1
+"-r")
+    usage 1 "server.sh: $0 $HOST $TOOL $FEATURE" $@
+    echo "Reflecting command to server: $@"
     execute_command $@
+    ;;
+*)
+    usage 1 "Invalid tool: $TOOL"
+    exit 1
     ;;
 esac
