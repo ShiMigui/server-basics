@@ -1,6 +1,4 @@
-#!/bin/bash
-
-function execute_command() {
+function execute() {
     ssh -t $HOST "$@"
     if [ $? -ne 0 ]; then
         echo "Error: Command failed on remote host."

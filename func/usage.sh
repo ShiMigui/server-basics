@@ -1,5 +1,3 @@
-#!/bin/bash
-
 function usage() {
     local expected_quantity=$1
     local message=$2
