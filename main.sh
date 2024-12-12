@@ -1,10 +1,12 @@
 #!/bin/bash
 
-source "./source/config.sh"
+SCRIPT_DIR=$(dirname "$(realpath "$0")")
 
-source "./func/execute.sh"
-source "./func/execute_in_wd.sh"
-source "./func/usage.sh"
+source "$SCRIPT_DIR/source/config.sh"
+
+source "$SCRIPT_DIR/func/execute.sh"
+source "$SCRIPT_DIR/func/execute_in_wd.sh"
+source "$SCRIPT_DIR/func/usage.sh"
 
 HOST=${1:-"<host>"}
 TOOL=${2:-"<tool>"}
@@ -16,11 +18,11 @@ shift 3
 case $TOOL in
 "bare")
     WORK_DIR=$BARE_DIR
-    source "./tools/bare.sh"
+    source "$SCRIPT_DIR/tools/bare.sh"
     ;;
 "mirror")
     WORK_DIR=$MIRROR_DIR
-    source "./tools/mirror.sh"
+    source "$SCRIPT_DIR/tools/mirror.sh"
     ;;
 "-r")
     echo "Reflecting command to server: $FEATURE"

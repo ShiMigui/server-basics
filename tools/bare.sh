@@ -1,4 +1,4 @@
-source "./tools/_repositories_init.sh"
+source "$SCRIPT_DIR/tools/_repositories_init.sh"
 
 case $FEATURE in
 "push")
