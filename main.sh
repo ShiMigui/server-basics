@@ -9,7 +9,7 @@ HOST=${1:-"<host>"}
 TOOL=${2:-"<tool>"}
 FEATURE=${3:-"<feature>"}
 
-usage 3 "server.sh: $0 $HOST $TOOL $FEATURE [..args]" $@
+usage 3 "server.sh: $0 $HOST $TOOL $FEATURE ...args" $@
 shift 3
 
 case $TOOL in
