@@ -2,7 +2,7 @@
 
 source "./source/config.sh"
 source "./source/execute_command.sh"
-source "./_repositories_init.sh"
+source "./tools/_repositories_init.sh"
 
 case $COMMAND in
 "create")
