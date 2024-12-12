@@ -1,22 +1,16 @@
 #!/bin/bash
 
-source "./source/config.sh"
-source "./source/execute_command.sh"
 source "./tools/_repositories_init.sh"
 
-case $COMMAND in
+case $FEATURE in
 "create")
     execute_command "cd $MIRROR_DIR && git clone $BARE_DIR/$REPO_NAME"
     ;;
 "sync")
-    local origin="origin main"
-
-    if [ $# -gt 1 ]; then
-        origin="$@"
-    fi
+    origin=${@:-"origin main"}
     execute_command "cd $MIRROR_DIR/$REPO_NAME && git pull $origin"
     ;;
 *)
-    echo "Unknown command: $COMMAND"
+    echo "Unknown command: $FEATURE"
     ;;
 esac

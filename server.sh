@@ -1,21 +1,25 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]; then
-    echo "Usage: $0 <tool> <command>"
+source "./source/config.sh"
+source "./source/execute_command.sh"
+
+HOST=$1
+
+TOOL=${2:-"<tool>"}
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 $TOOL <feature>"
     exit 1
 fi
 
-COMMAND=$1
-shift
-case $COMMAND in
-"git")
-    bash ./tools/git.sh $0 $COMMAND "$@"
+case $TOOL in
+"bare")
+    source "./tools/bare.sh"
     ;;
 "mirror")
-    bash ./tools/mirror.sh $0 $COMMAND "$@"
+    source "./tools/mirror.sh"
     ;;
 *)
-    echo "Warning: Unknown command '$COMMAND'"
+    echo "Warning: Unknown tool '$TOOL'"
     bash ./source/execute_command.sh "$@"
     ;;
 esac

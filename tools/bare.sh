@@ -1,10 +1,8 @@
 #!/bin/bash
 
-source "./source/config.sh"
-source "./source/execute_command.sh"
 source "./tools/_repositories_init.sh"
 
-case $COMMAND in
+case $FEATURE in
 "push")
     execute_command "cd $BARE_DIR/$REPO_NAME && git push $@"
     ;;
@@ -12,6 +10,6 @@ case $COMMAND in
     execute_command "cd $BARE_DIR && git clone --bare $REPO_URL"
     ;;
 *)
-    execute_command "git $@"
+    execute_command "cd $BARE_DIR && git $@"
     ;;
 esac
