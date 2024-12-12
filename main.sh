@@ -2,7 +2,7 @@
 
 source "./source/config.sh"
 
-source "./func/execute_command.sh"
+source "./func/execute.sh"
 source "./func/usage.sh"
 
 HOST=${1:-"<host>"}
@@ -21,7 +21,7 @@ case $TOOL in
     ;;
 "-r")
     echo "Reflecting command to server: $FEATURE"
-    execute_command $FEATURE
+    execute $FEATURE
     ;;
 *)
     usage 1 "Invalid tool: $TOOL"
