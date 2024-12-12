@@ -7,6 +7,24 @@ A tool for executing commands over SSH to manage repositories, including creatin
 - **Mirror**: A Git repository with a working tree. This can be used alongside tools like Docker or Docker Compose.
 - **Server-side**: Refers to the service accessed through the SSH connection.
 
+### Get Started
+To start using this tool, follow these steps:
+
+1. **Clone the repository**:
+   First, clone this repository to your local machine:
+   ```bash
+   git clone https://www.github.com:shimigui/server-tools.git ~/.server-tools
+   ```
+
+2. **Set up an alias**:
+   Add an alias to your `.zshrc` or `.bashrc` file. Replace `SSH_ADDRESS` with the actual address of your server, and optionally change `server` to a name of your choice:
+   ```bash
+   alias server='bash ~/.server-tools/main.sh SSH_ADDRESS'
+   ```
+   After adding this alias, reload your shell or run `source ~/.zshrc` (or `source ~/.bashrc`) to apply the changes.
+
+Once you’ve completed these steps, you can use the `server` command to manage your repositories on the remote server.
+
 ## Usage
 This tool is divided into two layers: `<tool>` and `<tool> <feature>`.
 
