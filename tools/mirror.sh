@@ -5,7 +5,7 @@ source "./tools/_repositories_init.sh"
 case $FEATURE in
 "pull")
     origin=${@:-"origin main"}
-    execute_command "cd $MIRROR_DIR/$REPO_NAME && git pull $origin"
+    execute_command "cd $MIRROR_DIR && git --git-dir=./$REPO_NAME/.git pull $origin"
     ;;
 "clone")
     execute_command "cd $MIRROR_DIR && git clone $BARE_DIR/$REPO_NAME $@"

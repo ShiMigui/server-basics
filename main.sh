@@ -20,9 +20,8 @@ case $TOOL in
     source "./tools/mirror.sh"
     ;;
 "-r")
-    usage 1 "server.sh: $0 $HOST $TOOL $FEATURE" $@
-    echo "Reflecting command to server: $@"
-    execute_command $@
+    echo "Reflecting command to server: $FEATURE"
+    execute_command $FEATURE
     ;;
 *)
     usage 1 "Invalid tool: $TOOL"
