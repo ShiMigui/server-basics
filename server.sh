@@ -8,7 +8,7 @@ HOST=$1
 
 TOOL=${2:-"<tool>"}
 # Verify if has at least 2 variables
-usage 2 "Usage: $0 $TOOL <feature>" $@
+usage 2 "server.sh: $0 $TOOL <feature>" $@
 
 case $TOOL in
 "bare")
