@@ -16,7 +16,7 @@ Commands to manage operations on the server-side.
 | -------- | ---------------------------------------------------------- | ------------- |
 | `bare`   | Manages bare repositories located in `$BARE_DIR`.          | `$BARE_DIR`   |
 | `mirror` | Manages repositories with a working tree in `$MIRROR_DIR`. | `$MIRROR_DIR` |
-| `-r`     | Reflects commands to the server-side.                      | -             |
+| `-r`     | Reflects commands to the server-side.                      | Default       |
 
 ### Tool Features
 Features extend the functionality of a tool.  
