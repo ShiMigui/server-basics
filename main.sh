@@ -18,7 +18,8 @@ case $TOOL in
     source "./tools/mirror.sh"
     ;;
 *)
-    echo "Warning: Unknown tool '$TOOL'"
+    echo "Warning: Untracked tool '$TOOL'"
+    shift 1
     execute_command $@
     ;;
 esac
