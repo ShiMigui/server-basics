@@ -8,7 +8,7 @@ case $FEATURE in
     ;;
 "sync")
     origin=${@:-"origin main"}
-    execute_command "cd $MIRROR_DIR/$REPO_NAME && git pull $origin $@"
+    execute_command "cd $MIRROR_DIR/$REPO_NAME && git pull $origin"
     ;;
 *)
     echo "Unknown command: $FEATURE"
