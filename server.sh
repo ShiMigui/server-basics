@@ -2,14 +2,13 @@
 
 source "./source/config.sh"
 source "./source/execute_command.sh"
+source "./func/usage.sh"
 
 HOST=$1
 
 TOOL=${2:-"<tool>"}
-if [ $# -lt 2 ]; then
-    echo "Usage: $0 $TOOL <feature>"
-    exit 1
-fi
+# Verify if has at least 2 variables
+usage 2 "Usage: $0 $TOOL <feature>" $@
 
 case $TOOL in
 "bare")
