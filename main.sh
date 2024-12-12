@@ -15,9 +15,11 @@ shift 3
 
 case $TOOL in
 "bare")
+    WORK_DIR=$BARE_DIR
     source "./tools/bare.sh"
     ;;
 "mirror")
+    WORK_DIR=$MIRROR_DIR
     source "./tools/mirror.sh"
     ;;
 "-r")
